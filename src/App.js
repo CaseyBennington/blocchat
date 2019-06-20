@@ -3,9 +3,10 @@ import * as firebase from 'firebase';
 import './App.css';
 import RoomList from './RoomList/RoomList';
 import Messages from './Messages/Messages';
+import User from './User/User';
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyBg-IehK64QmPhyKoayvvxxAJJa_tNZQAs",
   authDomain: "bloc-chat-35c32.firebaseapp.com",
   databaseURL: "https://bloc-chat-35c32.firebaseio.com",
@@ -38,7 +39,7 @@ class App extends Component {
     return (
       <div className="App">
         <nav id="main">
-        
+          <User firebase={firebase} setUser={this.setUser.bind(this)} user={this.state.user} />
         </nav>
 
         <aside id="sidebar">
